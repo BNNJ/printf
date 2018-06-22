@@ -11,7 +11,6 @@ SRC				=	ft_printf.c			\
 					converter_int.c		\
 					handler_binflag.c	\
 					handler_char.c		\
-					handler_display.c	\
 					handler_error.c		\
 					handler_float.c		\
 					handler_int.c		\
