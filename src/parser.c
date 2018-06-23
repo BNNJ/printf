@@ -58,7 +58,8 @@ int			ftpf_groundcontrol(const char *format, va_list ap, t_string **str)
 	t_par	par;
 
 	if (!(par.string = (t_string*)malloc(sizeof(t_string))))
-		return (-1);	
+		return (-1);
+	write(1, "\n", 1);
 	while (*format)
 	{
 		ftpf_init_par(&par);
