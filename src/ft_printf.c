@@ -9,7 +9,6 @@ int		ft_vdprintf(int fd, const char *format, va_list ap)
 		return (-1);
 	if (!format)
 		return (-1);
-	printf("%s\n", str->content);
 	ret = ftpf_groundcontrol(format, ap, &str);
 	if (str->content)
 		write(fd, str->content, str->len);
