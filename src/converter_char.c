@@ -2,7 +2,7 @@
 
 int		ftpf_convert_wide_char(wchar_t c, char *str)
 {
-	if (c <= 0x7F)
+	if (c <= 0x7F || (MB_CUR_MAX == 1 && c <= 0xFF))
 		str[0] = (char)c;
 	else if (c <= 0x7FF && MB_CUR_MAX >= 2)
 	{
