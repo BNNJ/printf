@@ -69,6 +69,7 @@ int			ftpf_groundcontrol(const char *format, va_list ap, t_string **str)
 		else
 			i = ftpf_get_flags(ap, format, &par);
 		format += i;
+		printf("## %c ##\n", par.sign);
 		if (ftpf_majortom(ap, &par) < 0 || par.e_status == ERROR)
 			return (ftpf_error(&par, 1, par.string->content));
 		*str = ft_tstr_join(*str, par.string, 1);

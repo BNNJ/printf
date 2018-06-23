@@ -113,7 +113,8 @@ void	ftpf_get_format_flags(const char **format, t_par *par)
 			FLAGS |= F_BIN;
 		else if (**format == '{')
 			FLAGS |= F_DISPLAY;
-		if (FLAGS & F_PLUS || FLAGS & F_SPACE)
+		if ((FLAGS & F_SPACE && **format == ' ' && !(FLAGS & F_PLUS))
+			|| (FLAGS & F_PLUS && **format == '+'))
 			SIGN = **format;
 		++*format;
 	}

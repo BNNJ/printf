@@ -1,11 +1,11 @@
 #include "ft_printf.h"
 
-static char	*get_width(t_par *par, int pref_len)
+static char	*get_width(t_par *par, int prefix_len)
 {
 	char	*width;
 	int		len;
 
-	len = WIDTH - (LEN + pref_len);
+	len = WIDTH - (LEN + prefix_len);
 	if (FLAGS & F_WIDTH && len > 0)
 	{
 		if (!(width = ft_strnew(len)))

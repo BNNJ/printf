@@ -81,7 +81,6 @@ static int	ftpf_handle_wide_string(va_list ap, t_par *par)
 	LEN_MOD = !tmp ? NONE : L;
 	CONTENT = !tmp ? ft_strdup("(null)") : str;
 	LEN = ft_strlen(CONTENT);
-	printf("## %S ##\n", CONTENT);
 	return (1);
 }
 
