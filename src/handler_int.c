@@ -75,6 +75,7 @@ static int	assemble_string(t_par *par, char *prefix, char *width)
 		if (!(CONTENT = ft_strjoin_f(prefix, CONTENT, 3)))
 			return (0);
 	}
+	LEN = ft_strlen(CONTENT);
 	return (1);
 }
 
