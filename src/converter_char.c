@@ -24,7 +24,7 @@ int		ftpf_convert_wide_char(wchar_t c, char *str)
 	}
 	else
 		return (0);
-	return (ft_strlen(str);
+	return (ft_strlen(str));
 }
 
 int		ftpf_convert_char(char c, t_par *par)

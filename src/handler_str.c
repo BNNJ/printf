@@ -54,16 +54,14 @@ static int	ftpf_finalize_string(t_par *par)
 	return (1);
 }
 
-static int	ftpf_handle_wide_string(va_list ap, t_par *par)
+static int	ftpf_handle_wide_string(wchar_t *tmp, t_par *par)
 {
-	wchar_t	*tmp;
 	char	*str;
 	int		i;
 	int		check;
 
 	i = 0;
 	check = 0;
-	tmp = va_arg(ap, wchar_t*);
 	if (!tmp)
 		PRECI = PRECI >= 6 ? PRECI : 0;
 	else
@@ -87,10 +85,14 @@ static int	ftpf_handle_wide_string(va_list ap, t_par *par)
 int		ftpf_handle_string(va_list ap, t_par *par)
 {
 	char	*str;
+	wchar_t	*wstr;
 
 	str = NULL;
 	if (LEN_MOD > NONE)
-		ftpf_handle_wide_string(ap, par);
+	{	
+		wstr = va_arg(ap, wchar_t*);
+		ftpf_handle_wide_string(wstr, par);
+	}
 	else
 	{
 		str = va_arg(ap, char*);
