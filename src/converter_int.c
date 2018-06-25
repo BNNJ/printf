@@ -30,6 +30,7 @@ void		ftpf_convert_int(va_list ap, t_par *par)
 	intmax_t	nb;
 	uintmax_t	unb;
 
+	nb = 0;
 	if (LEN_MOD == HH)
 		nb = (char)va_arg(ap, int);
 	else if (LEN_MOD == H)
@@ -55,6 +56,7 @@ void		ftpf_convert_unsigned(va_list ap, t_par *par)
 {
 	uintmax_t	nb;
 
+	nb = 0;
 	if (LEN_MOD == HH)
 		nb = (unsigned char)va_arg(ap, unsigned int);
 	else if (LEN_MOD == H)
@@ -69,7 +71,7 @@ void		ftpf_convert_unsigned(va_list ap, t_par *par)
 		nb = (size_t)va_arg(ap, uintmax_t);
 	else if (LEN_MOD == J)
 		nb = va_arg(ap, uintmax_t);
-	if (nb == 0 && (TYPE == 'o' || 'O'))
+	if (nb == 0 && (TYPE == 'o' || TYPE == 'O'))
 		FLAGS &= ~F_HASH;
 	CONTENT = FLAGS & F_BIN
 		? ftpf_handle_bin(&nb, par)
